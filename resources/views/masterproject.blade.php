@@ -45,7 +45,7 @@
                                     <th>{{ $item->nama }}</th>
 
                                     <td class="text-center">
-                                        <a class="btn-warning" onclick="show({{ $item->id }})"><i
+                                        <a class="btn btn-warning" onclick="show({{ $item->id }})"><i
                                                 class="btn-sm info fas fa-folder-open"></i></a>
                                         <a class="btn-success" href="{{ route('masterproject.tambah', $item->id) }}"><i
                                                 class="btn-sm success fas fa-plus"></i></a>
