@@ -69,7 +69,7 @@
                 </div>
                 <div class="card-body " id="project">
                     <div class="text-center">
-
+                        <h6>Pilih Siswa Terlebih Dahulu</h6>
                     </div>
                 </div>
             </div>
