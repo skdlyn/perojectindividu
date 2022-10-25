@@ -49,6 +49,11 @@
                     <h6 class="m-0 font-weight-bold text-white"><i class="fas fa-tasks"></i> Project Siswa</h6>
                 </div>
                 <div class="card-body">
+                    <blockquote class="blockquote text-center">
+                        <p class="mb-0">{{ $siswa->project }}</p>
+                        <footer class="blockquote-footer">Project Dikerjakan Oleh : <cite title="Source Title">{{ $siswa->nama }}</cite>
+                        </footer>
+                    </blockquote>
                 </div>
             </div>
         </div>

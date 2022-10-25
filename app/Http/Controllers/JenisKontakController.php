@@ -8,7 +8,7 @@ use App\Models\jenis_kontak;
 use App\Models\kontak;
 use App\Models\siswa;
 
-class JKontakController extends Controller
+class JenisKontakController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +17,9 @@ class JKontakController extends Controller
      */
     public function index()
     {
-        // return view('master_kontak');
-        //
+        $jenis_kontak = jenis_kontak::paginate(5);
+        return view('mastercontact', compact('jenis_kontak'));
+        
     }
 
     /**
@@ -28,7 +29,7 @@ class JKontakController extends Controller
      */
     public function create()
     {
-        return view('mastercontact');
+        return view('CreateJK');
     }
 
     /**
@@ -43,12 +44,9 @@ class JKontakController extends Controller
             'required' => ':attribute harus diisi',
             'min' => ':attribute minimal :min karakter',
             'max' => ':attribute maximal :max karakter',
-            'numeric' => ':attribute harus diisi angka',
-            'mimes' => ':attribute harus bertipe foto'
         ];
 
         $this->validate($request, [
-            'jenis_kontak' => 'required'
         ], $masage);
 
 
@@ -83,10 +81,10 @@ class JKontakController extends Controller
        // $contact = siswa::find($id)->kontak()->get();
         // $contact = siswa::find($id)->jenis_kontak()->get();
         // $kontak = kontak::find($id);
-        $j_kontak = jenis_kontak::find($id);
+        $jenis_kontak = jenis_kontak::find($id);
         // $kontak = kontak::get();
         // return($j_kontak);
-        return view('edit_jkontak', compact('jenis_kontak'));
+        // return view('edit_jkontak', compact('jenis_kontak'));
         //
     }
 

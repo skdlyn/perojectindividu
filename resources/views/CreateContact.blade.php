@@ -16,7 +16,7 @@
             <form action="{{ route('mastercontact.store') }}" method="post">
                 @csrf
                 <div class="form-group">
-                    <input type="hidden" name="jenis_kontak" value="{{ $siswa->id }}">
+                    <input type="hidden" name="siswa_id" value="{{ $siswa->id }}">
                         <label for="sosmed">Pilih Jenis Sosial Media</label>
                         <select class="form-select form-control" id="sosmed" name='sosmed'>
                             @foreach ($jenis_kontak as $item)

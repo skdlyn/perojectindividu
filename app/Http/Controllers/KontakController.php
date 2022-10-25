@@ -54,11 +54,11 @@ class KontakController extends Controller
         $validateData = $request->validate([], $message);
 
         kontak::create([
-            'siswa_id' => $request->id_siswa,
-            'jenis_kontak_id' => $request->jenis_kontak,
+            'siswa_id' => $request->siswa_id,
+            'jenis_kontak_id' => $request->sosmed,
             'deskripsi' => $request->deskripsi,
         ]);
-        Session::flash('benar', 'Selamat!!! Project Anda Berhasil Ditambahkan');
+        Session::flash('benar', 'Selamat!!! Kontak Anda Berhasil Ditambahkan');
         return redirect('/mastercontact');
     }
 

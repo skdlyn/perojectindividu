@@ -6,6 +6,7 @@ use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\KontakController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\JenisKontakController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +71,8 @@ Route::middleware('auth')->group(function(){
     Route::resource('mastercontact', KontakController::class);
     Route::get('mastercontact/create/{id_siswa}', [KontakController::class, 'tambah'])->name('mastercontact.tambah');
     route::get('mastercontact/{id_siswa}/hapus', [KontakController::class,'hapus'])->name('mastercontact.hapus');
+    Route::resource('masterjeniskontak', JenisKontakController::class);
+    route::get('masterjeniskontam/{id_jenis_kontak}/hapus', [JenisKontakController::class,'hapus'])->name('masterjeniskontak.hapus');
     Route::post('logout', [LoginController::class, 'logout']);
 });
 // Route::get('/forgot_password', function () {
