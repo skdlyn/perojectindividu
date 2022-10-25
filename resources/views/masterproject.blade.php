@@ -46,9 +46,11 @@
 
                                     <td class="text-center">
                                         <a class="btn btn-warning" onclick="show({{ $item->id }})">
-                                            <i class="btn-sm info fas fa-folder-open"></i></a>
-                                        <a class="btn-success" href="{{ route('masterproject.tambah', $item->id) }}"><i
-                                                class="btn-sm success fas fa-plus"></i></a>
+                                            <i class="btn-sm info fas fa-folder-open"></i>
+                                        </a>
+                                        <a class="btn-success" href="{{ route('masterproject.tambah', $item->id) }}">
+                                            <i class="btn-sm success fas fa-plus"></i>
+                                        </a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -56,7 +58,7 @@
                     </table>
 
                     <div class="card-footer d-flex justify-content-center">
-                        {{ $data->links() }}
+                        {{ $data->links()}}
                     </div>
                 </div>
             </div>
