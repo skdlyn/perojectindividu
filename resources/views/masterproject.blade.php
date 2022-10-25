@@ -76,7 +76,7 @@
         </div>
     </div>
     <script>
-        function show(id) {
+        function show(id){
             $.get('masterproject/' + id, function(data) {
                 $('#project').html(data);
             })
