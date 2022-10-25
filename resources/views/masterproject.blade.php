@@ -39,7 +39,6 @@
                             </tr>
                         </thead>
                         @foreach ($data as $item)
-                            <tbody>
                                 <tr>
                                     <th>{{ $item->nisn }}</th>
                                     <th>{{ $item->nama }}</th>
@@ -53,7 +52,6 @@
                                         </a>
                                     </td>
                                 </tr>
-                            </tbody>
                         @endforeach
                     </table>
 
