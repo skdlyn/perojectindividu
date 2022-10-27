@@ -73,7 +73,7 @@
                                             <th scope="col">ACTION</th>
                                         </tr>
                                     </thead>
-                                    @foreach ($data as $item)
+                                    @foreach ($student as $item)
                                         <tbody>
                                             <tr>
                                                 <th>{{ $item->nisn }}</th>
@@ -91,7 +91,7 @@
                                     @endforeach
                                 </table>
                                 <div class="card-footer d-flex justify-content-center">
-                                    {{ $data->links() }}
+                                    {{ $student->links() }}
                                 </div>
                             </div>
                         </div>

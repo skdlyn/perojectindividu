@@ -17,9 +17,9 @@ class KontakController extends Controller
      */
     public function index()
     {
-        $data = siswa::paginate(7);
+        $student = siswa::paginate(7);
         $jenis_kontak = jenis_kontak::all();
-        return view('mastercontact', compact('data', 'jenis_kontak'));
+        return view('mastercontact', compact('student', 'jenis_kontak'));
     }
 
     /**
@@ -82,7 +82,9 @@ class KontakController extends Controller
      */
     public function edit($id)
     {
-        return view('EditContact');
+        $kontak = kontak::find($id);
+        $jenis_kontak = jenis_kontak::all();
+        return view('/EditContact', compact('kontak', 'jenis_kontak'));
     }
 
     /**
@@ -94,7 +96,23 @@ class KontakController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $message = [
+            'required' => ';attribute isi woi',
+            'min' => ':attribute minimal :min karakter woi',
+            'max' => ':attribute maksimal :max karakter woi'
+        ];
+        $validateData = $request->validate([
+            'sosmed' => 'required',
+            'deskripsi' => 'required'
+        ], $message);
+
+        $kontak = kontak::find($id);
+        $kontak->jenis_kontak_id = $request->sosmed;
+        $kontak->deskripsi = $request->deskripsi;
+        $kontak->save();
+        // kontak::find($id)->update($validateData);
+        Session::flash('update', 'Selamat!!! Kontak Anda Berhasil Diupdate');
+        return redirect('/mastercontact');
     }
 
     /**
@@ -110,7 +128,7 @@ class KontakController extends Controller
 
     public function hapus($id)
     {
-        $kontak = kontak::find($id)->delete();
+        $siswa = kontak::find($id)->delete();
         Session::flash('danger', 'Data Berhasil Dihapus');
         return redirect('/mastercontact');
     }

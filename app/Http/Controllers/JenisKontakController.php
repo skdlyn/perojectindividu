@@ -84,7 +84,7 @@ class JenisKontakController extends Controller
         $jenis_kontak = jenis_kontak::find($id);
         // $kontak = kontak::get();
         // return($j_kontak);
-        // return view('edit_jkontak', compact('jenis_kontak'));
+        return view('edit_jkontak', compact('jenis_kontak'));
         //
     }
 
