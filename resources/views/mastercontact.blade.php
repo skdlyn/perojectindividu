@@ -5,27 +5,33 @@
     @if ($message = Session::get('benar'))
         <div class="alert alert-success alert-block">
             <strong>{{ $message }}</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <button type="button" class="btn btn-sm btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
     @if ($message = Session::get('danger'))
         <div class="alert alert-danger alert-block">
             <strong>{{ $message }}</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <button type="button" class="btn btn-sm btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
     @if ($message = Session::get('update'))
         <div class="alert alert-success alert-block">
             <strong>{{ $message }}</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <button type="button" class="btn btn-sm btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
     @if ($message = Session::get('hapus'))
     <div class="alert alert-secondary alert-block">
             <strong>{{ $message }}</strong>
-            <button type="button" class="btn btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <button type="button" class="btn btn-sm btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-@endif
+    @endif
+    @if ($message = Session::get('yesjadi'))
+    <div class="alert alert-success alert-block">
+            <strong>{{ $message }}</strong>
+            <button type="button" class="btn btn-sm btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     <!--Modal Tambah Data-->
     <div class="col-lg-12">
         <div class="card shadow mb-4">

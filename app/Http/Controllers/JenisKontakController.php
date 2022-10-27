@@ -54,7 +54,7 @@ class JenisKontakController extends Controller
             'jenis_kontak' => $request->jenis_kontak
         ]);
 
-        Session::flash('success', "data berhasil ditambahkan!!");
+        Session::flash('yesjadi', "Selamat !!! Data jenis kontak berhasil ditambahkan!!");
         return redirect('/mastercontact');
         //
     }
@@ -81,10 +81,10 @@ class JenisKontakController extends Controller
        // $contact = siswa::find($id)->kontak()->get();
         // $contact = siswa::find($id)->jenis_kontak()->get();
         // $kontak = kontak::find($id);
-        $jenis_kontak = jenis_kontak::find($id);
+        // $jenis_kontak = jenis_kontak::find($id);
         // $kontak = kontak::get();
         // return($j_kontak);
-        return view('edit_jkontak', compact('jenis_kontak'));
+        // return view('edit_jkontak', compact('jenis_kontak'));
         //
     }
 
@@ -97,25 +97,25 @@ class JenisKontakController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $masage = [
-            'required' => ':attribute harus diisi',
-            'min' => ':attribute minimal :min karakter',
-            'max' => ':attribute maximal :max karakter',
-            'numeric' => ':attribute harus diisi angka',
-            'mimes' => ':attribute harus bertipe foto'
-        ];
+        // $masage = [
+        //     'required' => ':attribute harus diisi',
+        //     'min' => ':attribute minimal :min karakter',
+        //     'max' => ':attribute maximal :max karakter',
+        //     'numeric' => ':attribute harus diisi angka',
+        //     'mimes' => ':attribute harus bertipe foto'
+        // ];
 
-        $this->validate($request, [
-            'jenis_kontak' => 'required'
-        ], $masage);
+        // $this->validate($request, [
+        //     'jenis_kontak' => 'required'
+        // ], $masage);
 
-            $jenis_kontak = jenis_kontak::find($id);
-            $jenis_kontak->jenis_kontak = $request->jenis_kontak;
+        //     $jenis_kontak = jenis_kontak::find($id);
+        //     $jenis_kontak->jenis_kontak = $request->jenis_kontak;
 
-            $jenis_kontak->save();
-            Session::flash('success', "data berhasil diupdate!!");
-            return redirect('mastercontact');
-        //
+        //     $jenis_kontak->save();
+        //     Session::flash('', "data berhasil diupdate!!");
+        //     return redirect('mastercontact');
+        // //
     }
 
     /**
@@ -132,7 +132,7 @@ class JenisKontakController extends Controller
     public function hapus($id)
     {
         $siswa = jenis_kontak::find($id)->delete();
-        Session::flash('hapus', "data berhasil dihapus!!");
+        Session::flash('hapus', "Data berhasil dihapus :(");
         return redirect('/mastercontact');
         //
     }

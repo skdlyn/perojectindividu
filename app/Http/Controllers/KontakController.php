@@ -129,7 +129,7 @@ class KontakController extends Controller
     public function hapus($id)
     {
         $siswa = kontak::find($id)->delete();
-        Session::flash('danger', 'Data Berhasil Dihapus');
+        Session::flash('danger', 'Data Berhasil Dihapus :(');
         return redirect('/mastercontact');
     }
 }
