@@ -30,6 +30,6 @@ class siswa extends Model
 
     public function project()
     {
-        return $this->hasMany('App\Models\Project', 'id_siswa');
+        return $this->hasMany('App\Models\project', 'id_siswa');
     }
 }
