@@ -109,10 +109,10 @@ class JenisKontakController extends Controller
             'jenis_kontak' => 'required'
         ], $masage);
 
-            $jkontak = jenis_kontak::find($id);
-            $jkontak->jenis_kontak = $request->jenis_kontak;
+            $jenis_kontak = jenis_kontak::find($id);
+            $jenis_kontak->jenis_kontak = $request->jenis_kontak;
 
-            $jkontak->save();
+            $jenis_kontak->save();
             Session::flash('success', "data berhasil diupdate!!");
             return redirect('mastercontact');
         //
@@ -132,7 +132,7 @@ class JenisKontakController extends Controller
     public function hapus($id)
     {
         $siswa = jenis_kontak::find($id)->delete();
-        Session::flash('success', "data berhasil dihapus!!");
+        Session::flash('hapus', "data berhasil dihapus!!");
         return redirect('/mastercontact');
         //
     }

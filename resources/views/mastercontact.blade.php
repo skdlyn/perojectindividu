@@ -4,22 +4,28 @@
 @section('content')
     @if ($message = Session::get('benar'))
         <div class="alert alert-success alert-block">
-            <button type="button" class="close" data-dismiss="alert"></button>
+            <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
             <strong>{{ $message }}</strong>
         </div>
     @endif
     @if ($message = Session::get('danger'))
         <div class="alert alert-danger alert-block">
-            <button type="button" class="close" data-dismiss="alert"></button>
+            <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
             <strong>{{ $message }}</strong>
         </div>
     @endif
     @if ($message = Session::get('update'))
         <div class="alert alert-success alert-block">
-            <button type="button" class="close" data-dismiss="alert"></button>
+            <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
             <strong>{{ $message }}</strong>
         </div>
     @endif
+    @if ($message = Session::get('hapus'))
+    <div class="alert alert-secondary alert-block">
+        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+        <strong>{{ $message }}</strong>
+    </div>
+@endif
     <!--Modal Tambah Data-->
     <div class="col-lg-12">
         <div class="card shadow mb-4">
