@@ -15,7 +15,7 @@
             </div>
             <div class="modal-body">Anda Yakin Ingin Meninggalkan Aplikasi?</div>
             <div class="modal-footer">
-                <form action="logout" method="post">
+                <form action="logout" method="POST">
                     @csrf
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <input type="submit" class="btn btn-primary" value="Logout">
