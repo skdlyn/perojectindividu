@@ -56,8 +56,8 @@
                                         <th scope="row">{{ ++$i }}</th>
                                         <td>{{ $item->jenis_kontak }}</td>
                                         <td>
-                                            <a href="{{ route('masterjeniskontak.edit', $item->id) }}"
-                                                class="btn btn-sm btn-warning btn-circle"><i class="fas fa-edit"></i></a>
+                                            {{-- <a href="{{ route('masterjeniskontak.edit', $item->id) }}"
+                                                class="btn btn-sm btn-warning btn-circle"><i class="fas fa-edit"></i></a> --}}
                                             <a href="{{ route('masterjeniskontak.hapus', $item->id) }}"
                                                 class="btn btn-sm btn-danger btn-circle"><i class="fas fa-trash"></i></a>
                                         </td>
