@@ -6,7 +6,9 @@
 
         <div class="col-lg-4">
             <div class="card shadow mb-4">
-                <div class="card-header bg-gradient-primary"></div>
+                <div class="card-header bg-gradient-primary">
+                    <h6 class="m-0 font-weight-bold text-white"><i class="fas fa-users"></i> Data Diri Siswa</h6>
+                </div>
                 <div class="card-body text-center">
                     <img src="{{ asset('/template/img/' . $siswa->foto) }}" width="200"
                         class="rounded-circle mt-3 mx-auto img-thumbnail">
@@ -46,14 +48,12 @@
 
             <div class="card shadow mb-4">
                 <div class="card-header bg-gradient-primary">
-                    <h6 class="m-0 font-weight-bold text-white"><i class="fas fa-tasks"></i> Project Siswa</h6>
+                    <h6 class="m-0 font-weight-bold text-white"><i class="fas fa-user-plus"></i> Project / Karya Siswa </h6>
                 </div>
-                <div class="card-body">
-                    <blockquote class="blockquote text-center">
-                        <p class="mb-0">{{ $siswa->project }}</p>
-                        <footer class="blockquote-footer">Project Dikerjakan Oleh : <cite title="Source Title">{{ $siswa->nama }}</cite>
-                        </footer>
-                    </blockquote>
+                <div class="card-body text-center">
+                    @foreach ($project as $project)
+                        <li>{{ $project->nama_project }} : {{ $project->deskripsi }}</li>
+                    @endforeach
                 </div>
             </div>
         </div>

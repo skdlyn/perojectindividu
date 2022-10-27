@@ -100,14 +100,13 @@ class ProjectController extends Controller
     public function update(Request $request, $id)
     {
         $message = [
-            'required' => ';attribute isi woi',
-            'min' => ':attribute minimal :min karakter woi',
-            'max' => ':attribute maksimal :max karakter woi'
+            // 'required' => ':attribute isi woi',
+            // 'min' => ':attribute minimal :min karakter woi',
+            // 'max' => ':attribute maksimal :max karakter woi'
         ];
         $validateData = $request->validate([
-            'nama_project' => 'required',
-            'deskripsi' => 'required',
-            'tanggal' => 'required'
+            // 'nama_project' => 'required',
+            // 'tanggal' => 'required'
         ], $message);
 
         $project = project::find($id);

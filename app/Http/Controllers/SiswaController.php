@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\siswa;
+use App\Models\project;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 
@@ -90,8 +91,9 @@ class SiswaController extends Controller
     {
         $siswa = siswa::find($id);
         $kontaks = $siswa->kontak()->get();
+        $project = $siswa->project()->get();
         // return $kontak;
-        return view('ShowSiswa', compact('siswa', 'kontaks'));
+        return view('ShowSiswa', compact('siswa', 'kontaks', 'project'));
     }
 
     /**
