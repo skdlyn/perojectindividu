@@ -15,10 +15,10 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->middleware('admin')->except('index', 'show');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('admin')->except('index', 'show');
+    // }
     public function index()
     {
         $data = siswa::paginate(7);

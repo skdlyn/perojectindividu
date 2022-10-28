@@ -15,10 +15,10 @@ class JenisKontakController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->middleware('admin')->except('index', 'show');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('admin')->except('index', 'show');
+    // }
     public function index()
     {
         $jenis_kontak = jenis_kontak::paginate(5);
