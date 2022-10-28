@@ -34,9 +34,11 @@
     @endif
     <!--Modal Tambah Data-->
     <div class="col-lg-12">
+        @if(auth()->user()->role == "admin")
         <div class="card shadow mb-4">
             <a class="btn btn-primary" href="{{ route('masterjeniskontak.create') }}">Tambah Jenis Kontak</a>
         </div>
+        @endif
         <!--Jenis Kontak-->
         <div class="row">
             <div class="col-lg-12">
@@ -47,7 +49,9 @@
                                 <tr>
                                     <th scope="col">NO</th>
                                     <th scope="col">JENIS KONTAK</th>
+                                    @if(auth()->user()->role == "admin")
                                     <th scope="col">ACTION</th>
+                                    @endif
                                 </tr>
                             </thead>
                             <tbody>
@@ -58,8 +62,10 @@
                                         <td>
                                             {{-- <a href="{{ route('masterjeniskontak.edit', $item->id) }}"
                                                 class="btn btn-sm btn-warning btn-circle"><i class="fas fa-edit"></i></a> --}}
-                                            <a href="{{ route('masterjeniskontak.hapus', $item->id) }}"
+                                                @if(auth()->user()->role == "admin")
+                                                <a href="{{ route('masterjeniskontak.hapus', $item->id) }}"
                                                 class="btn btn-sm btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                                                @endif
                                         </td>
                                     </tr>
                             </tbody>
@@ -94,9 +100,11 @@
                                                 <td class="text-center">
                                                     <a class="btn-warning" onclick="show({{ $item->id }})"><i
                                                             class="btn-sm warning fas fa-phone"></i></a>
+                                                    @if(auth()->user()->role == "admin")
                                                     <a class="btn-success"
                                                         href="{{ route('mastercontact.tambah', $item->id) }}"><i
                                                             class="btn-sm success fas fa-plus"></i></a>
+                                                 @endif
                                                 </td>
                                             </tr>
                                         </tbody>

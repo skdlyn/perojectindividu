@@ -21,7 +21,7 @@ use App\Http\Controllers\JenisKontakController;
 
 
 //guest
-Route::middleware('guest')->group(function(){
+Route::middleware('auth')->group(function(){
     Route::get('login', [LoginController::class, 'index'])->name('login');
     Route::post('login', [LoginController::class, 'authenthicate']);
 
@@ -61,7 +61,7 @@ Route::middleware('guest')->group(function(){
 
 
 //admin
-Route::middleware('auth')->group(function(){
+Route::middleware('auth', 'CekLevel:admin')->group(function(){
     Route::resource('dashboard', DashboardController::class);
     route::get('mastersiswa/{id_siswa}/hapus', [SiswaController::class,'hapus'])->name('mastersiswa.hapus');
     Route::resource('mastersiswa', SiswaController::class);

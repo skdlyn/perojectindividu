@@ -13,6 +13,7 @@
                     </ul>
                 </div>
             @endif
+            @if(auth()->user()->role == "admin")
             <form action="{{ route('masterproject.store') }}" method="post">
                 @csrf
                 <div class="form-group">
@@ -36,6 +37,7 @@
                     <a href="{{ route('masterproject.index') }}" class="btn btn-danger">Batal</a>
                 </div>
             </form>
+            @endif
         </div>
     </div>
 @endsection

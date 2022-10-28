@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\siswa;
 use App\Models\project;
+use App\Http\Middleware\CekLevel;
 
 class DashboardController extends Controller
 {

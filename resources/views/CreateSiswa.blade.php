@@ -15,6 +15,7 @@
                         </ul>
                     </div>
                 @endif
+                @if(auth()->user()->role == "admin")
                 <form method="post" enctype="multipart/form-data" action="{{ route('mastersiswa.store') }}">
                 @csrf
                 <div class="form-group">
@@ -50,6 +51,7 @@
                         <a href="{{ route('mastersiswa.index')}}" class="btn btn-danger">Batal</a>
                     </div>
                 </form> 
+                @endif
             </div>
         </div>
     </div>

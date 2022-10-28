@@ -13,6 +13,7 @@
                 </ul>
             </div>
         @endif
+        @if(auth()->user()->role == "admin")
         <form action="{{ route('masterjeniskontak.store') }}" method="post">
             @csrf
             <div class="form-group">
@@ -25,6 +26,7 @@
                 <a href="{{ route('mastercontact.index') }}" class="btn btn-danger">Batal</a>
             </div>
         </form>
+        @endif
     </div>
 </div>
 @endsection
