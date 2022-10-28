@@ -26,7 +26,7 @@ class CekLevel
         }
 
         elseif (Auth::user()->role == 'siswa'){
-            return redirect()->intended('mastersiswa');
+            return redirect()->intended('dashboard');
         }
     }
 
