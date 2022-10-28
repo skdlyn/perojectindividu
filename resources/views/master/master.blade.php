@@ -50,7 +50,7 @@
                     <a class="nav-link active" href="/about">About</a>
                     <a class="nav-link active" href="/project">Projects</a>
                     <a class="nav-link active" href="/contact">Contact</a>
-                    <a class="nav-link active" href="/login">Login</a>
+                    <input type="submit" class="btn btn-primary" value="Login">
                 </div>
             </div>
         </div>
