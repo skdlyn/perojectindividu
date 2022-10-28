@@ -61,7 +61,7 @@ Route::middleware('guest')->group(function(){
 
 
 //admin
-Route::middleware(['auth', 'CekLevel:admin', 'siswa'])->group(function(){
+Route::middleware('auth')->group(function(){
     Route::resource('dashboard', DashboardController::class);
     route::get('mastersiswa/{id_siswa}/hapus', [SiswaController::class,'hapus'])->name('mastersiswa.hapus');
     Route::resource('mastersiswa', SiswaController::class);
